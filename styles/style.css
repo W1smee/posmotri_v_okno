@@ -9,7 +9,11 @@ html {
 }
 
 .page {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
   inline-size: 1200px;
+  block-size: 100%;
   margin: auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -40,7 +44,7 @@ ol {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  margin: 133px 30px;
+  padding: 133px 30px;
   gap: 30px;
 }
 
@@ -133,15 +137,15 @@ ol {
 
 .search-form__checkbox + .search-form__pseudo-checkbox {
   display: inline-block;
-  border: 1px solid #fff;
+  outline: 1px solid #fff;
   width: 19px;
   height: 19px;
   vertical-align: middle;
 }
 
 .search-form__checkbox[type="checkbox"]:active + .search-form__pseudo-checkbox {
-  width: 15px;
-  height: 15px;
+  width: 19px;
+  height: 19px;
   outline: 1px solid #fff;
   outline-offset: 1px;
   background-color: #fff;
@@ -149,8 +153,8 @@ ol {
 
 .search-form__checkbox[type="checkbox"]:checked
   + .search-form__pseudo-checkbox {
-  width: 15px;
-  height: 15px;
+  width: 19px;
+  height: 19px;
   outline: 1px solid #fff;
   outline-offset: 1px;
   background-color: #fff;
@@ -198,7 +202,7 @@ ol {
 }
 
 .more-button {
-  width: 399px;
+  width: 395px;
   height: 34px;
   margin: 2px;
 }
@@ -244,6 +248,26 @@ ol {
   background-color: #545050;
 }
 
+.content__card-link:hover {
+  text-decoration: underline 1px;
+  text-decoration-skip-ink: none;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  margin: 2px;
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
 .content__video-card-title {
   font-family: "Oswald", sans-serif;
   font-weight: 700;
@@ -270,26 +294,6 @@ ol {
   align-items: flex-start;
   justify-content: space-between;
   padding: 2px;
-}
-
-.content__video-card:hover {
-  text-decoration: underline 1px;
-  text-decoration-skip-ink: none;
-}
-
-.content__video-card:active {
-  background-color: #545050;
-  text-decoration: none;
-}
-
-.content__video-card:focus {
-  outline: none;
-}
-
-.content__video-card:focus-visible {
-  margin: 2px;
-  outline: 1px solid #fff;
-  outline-offset: 1px;
 }
 
 .content__video-card-thumbnail {
