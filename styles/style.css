@@ -71,14 +71,14 @@ ol {
   align-items: flex-start;
 }
 
+.search-form__fieldset {
+  border: none;
+}
+
 .search-form__fieldset-title {
   font-weight: 400;
   font-size: 18px;
   margin-block-end: 5px;
-}
-
-.search-form__fieldset {
-  border: none;
 }
 
 .search-form__label {
@@ -101,7 +101,7 @@ ol {
 }
 
 .search-form__label:has(:focus-visible) {
-  outline: 1px solid #fff;
+  outline: 1px solid currentColor;
   outline-offset: 1px;
 }
 
@@ -111,53 +111,57 @@ ol {
 
 .search-form__textfield {
   background-color: transparent;
-  border-bottom: 1px solid #fff;
-  border-top: 1px solid #fff;
+  border-bottom: 1px solid currentColor;
+  border-top: 1px solid currentColor;
   border-left: none;
   border-right: none;
-  width: 225px;
-  height: 27px;
+  inline-size: 225px;
+  block-size: 27px;
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: inherit;
+  color: currentColor;
   padding: 0;
   appearance: none;
 }
 
 .search-form__textfield:focus {
-  outline: 1px solid #fff;
+  outline: 1px solid currentColor;
   outline-offset: 1px;
 }
 
 .search-form__textfield:active {
-  outline: none;
-  border: 1px solid #fff;
+  outline: 1px solid currentColor;
+  outline-offset: 1px;
+}
+
+.search-form__checkbox {
+  appearance: none;
 }
 
 .search-form__checkbox + .search-form__pseudo-checkbox {
   display: inline-block;
-  outline: 1px solid #fff;
-  width: 19px;
-  height: 19px;
+  outline: 1px solid currentColor;
+  inline-size: 19px;
+  block-size: 19px;
   vertical-align: middle;
 }
 
 .search-form__checkbox[type="checkbox"]:active + .search-form__pseudo-checkbox {
-  width: 19px;
-  height: 19px;
-  outline: 1px solid #fff;
+  inline-size: 19px;
+  block-size: 19px;
+  outline: 1px solid currentColor;
   outline-offset: 1px;
-  background-color: #fff;
+  background-color: currentColor;
 }
 
 .search-form__checkbox[type="checkbox"]:checked
   + .search-form__pseudo-checkbox {
-  width: 19px;
-  height: 19px;
-  outline: 1px solid #fff;
+  inline-size: 19px;
+  block-size: 19px;
+  outline: 1px solid currentColor;
   outline-offset: 1px;
-  background-color: #fff;
+  background-color: currentColor;
 }
 
 .search-form__checkboxo:hover {
@@ -166,13 +170,13 @@ ol {
 }
 
 .button {
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   background-color: transparent;
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 700;
-  font-size: 18px;
+  font-size: inherit;
   text-align: center;
-  color: #fff;
+  color: currentColor;
   cursor: pointer;
 }
 
@@ -191,19 +195,19 @@ ol {
 }
 
 .button:focus-visible {
-  outline: 1px solid #fff;
+  outline: 1px solid currentColor;
   outline-offset: 1px;
 }
 
 .search-form__submit-button {
-  width: 194px;
-  height: 34px;
+  inline-size: 194px;
+  block-size: 34px;
   margin-block-start: 20px;
 }
 
 .more-button {
-  width: 395px;
-  height: 34px;
+  inline-size: 395px;
+  block-size: 34px;
   margin: 2px;
 }
 
@@ -221,7 +225,7 @@ ol {
   font-size: 75px;
   line-height: 94%;
   text-transform: uppercase;
-  color: #fff;
+  color: currentColor;
 }
 
 .content__accent {
@@ -231,7 +235,7 @@ ol {
 .content__list {
   position: relative;
   block-size: 298px;
-  overflow-y: scroll;
+  overflow: auto;
 }
 
 .content__list::-webkit-scrollbar {
@@ -241,7 +245,7 @@ ol {
 .content__card-link {
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: currentColor;
 }
 
 .content__card-link_current {
@@ -264,8 +268,20 @@ ol {
 
 .content__card-link:focus-visible {
   margin: 2px;
-  outline: 1px solid #fff;
+  outline: 1px solid currentColor;
   outline-offset: 1px;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2px;
+}
+
+.content__video-card-thumbnail {
+  object-fit: cover;
+  object-position: center;
 }
 
 .content__video-card-title {
@@ -280,25 +296,13 @@ ol {
 .content__video-card-description {
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: inherit;
   line-height: 90%;
-  color: #fff;
+  color: currentColor;
 }
 
 .content__list-item:not(:last-child) {
   padding-block-end: 30px;
-}
-
-.content__video-card {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 2px;
-}
-
-.content__video-card-thumbnail {
-  object-fit: cover;
-  object-position: center;
 }
 
 .visually-hidden {
